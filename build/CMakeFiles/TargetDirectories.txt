@@ -1,0 +1,3 @@
+/home/ilya/StatTest/build/CMakeFiles/ChiSquareTest.dir
+/home/ilya/StatTest/build/CMakeFiles/edit_cache.dir
+/home/ilya/StatTest/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ChiSquareTest.dir/chi_square.cpp.o CMakeFiles/ChiSquareTest.dir/main.cpp.o -o ChiSquareTest 
