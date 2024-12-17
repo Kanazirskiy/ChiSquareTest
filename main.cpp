@@ -1,23 +1,21 @@
 #include "chi_square.h"
 #include <iostream>
-#include <cstdlib>
 #include <map>
 #include <fstream>
 
 using namespace std;
-// Функция для получения порогового значения хи-квадрат
 double get_chi_square_threshold(double alpha) {
     std::map<double, double> chi_square_thresholds = {
-        {0.01, 6.635}, // Порог для уровня значимости 0.01
-        {0.05, 3.841}, // Порог для уровня значимости 0.05
-        {0.1, 2.706}   // Порог для уровня значимости 0.1
+        {0.01, 6.635},
+        {0.05, 3.841},
+        {0.1, 2.706}
     };
 
     if (chi_square_thresholds.find(alpha) != chi_square_thresholds.end()) {
         return chi_square_thresholds[alpha];
     } else {
         cerr << "Неподдерживаемый уровень значимости: " << alpha << '\n';
-        exit(1); // Завершить выполнение программы
+        exit(1);
     }
 }
 
@@ -32,7 +30,6 @@ int main(int argc, char* argv[]) {
     double alpha;
     vector<int> seq1, seq2;
 
-    // Если переданы 3 аргумента — одна выборка и уровень значимости
     if (argc == 3) {
         alpha = atof(argv[2]);
 
@@ -46,7 +43,6 @@ int main(int argc, char* argv[]) {
         while (input_file1 >> value) seq1.push_back(value);
         input_file1.close();
 
-        // Проверка выборки с равномерным распределением
         double threshold = get_chi_square_threshold(alpha);
         double chi2_one_sample = chi_square(seq1);
 
@@ -56,7 +52,6 @@ int main(int argc, char* argv[]) {
         else
             cout << "Гипотеза об однородности выборки не принимается\n";
     }
-    // Если переданы 4 аргумента — две выборки и уровень значимости
     else if (argc == 4) {
         file2 = argv[2];
         alpha = atof(argv[3]);
