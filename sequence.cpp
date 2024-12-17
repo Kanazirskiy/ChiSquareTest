@@ -53,19 +53,15 @@ int main() {
     int length1 = 1000;
     int length2 = 1000;
 
-    // Генерация двух случайных выборок
     std::vector<int> seq1 = generate_random_sequence(length1);
     std::vector<int> seq2 = generate_random_sequence(length2);
 
-    // Имена файлов для записи
     std::string file1 = "sample1.txt";
     std::string file2 = "sample2.txt";
 
-    // Запись выборок в файлы
     write_sequence_to_file(file1, seq1);
     write_sequence_to_file(file2, seq2);
 
-    // Сообщение об успешной генерации
     std::cout << "Две выборки успешно сгенерированы и сохранены в файлы:" << std::endl;
     std::cout << "Файл 1: " << file1 << " (длина: " << length1 << ")" << std::endl;
     std::cout << "Файл 2: " << file2 << " (длина: " << length2 << ")" << std::endl;
